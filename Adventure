@@ -1,0 +1,490 @@
+string_t name1, name2, build = "", middle1choice = "", middle2choice = "", middle3choice = "", cheatsheet = "", cont = "";
+double shooting, shdrills, shtotal, shin, dribbling, drdrills, drtotal, drin, stealing, stdrdrills, sttotal, stdrin, stdrin2, blocking, bltotal, injury, shtotal2, drtotal2, sttotal2, bltotal2, scoring, scdrills, scin, sctotal, rebounding, redrills, rein, retotal;
+int end1asit, end1bsit, end1csit, end2asit, end2bsit, end2csit, end3asit, end3bsit, end3csit;
+shooting = randint (80, 90);
+shdrills = randint (1, 5);
+dribbling = randint (80, 90);
+drdrills = randint (1, 5);
+stealing = randint (80, 90);
+stdrdrills = randint (1, 5);
+blocking= randint (80, 90);
+scoring = randint (80, 90);
+scdrills = randint (1, 5);
+rebounding = randint (80, 90);
+redrills = randint (1, 5);
+end1asit = randint (1, 2);
+end1bsit = randint (1, 2);
+end1csit = randint (1, 2);
+end2asit = randint (1, 2);
+end2bsit = randint (1, 2);
+end2csit = randint (1, 2);
+end3asit = randint (1, 2);
+end3bsit = randint (1, 2);
+injury = 2;
+shin = shdrills;
+drin = drdrills;
+stdrin = stdrdrills;
+stdrin2 = stdrin;
+scin = scdrills;
+rein = redrills;
+shtotal = shooting + shdrills;
+drtotal= dribbling + drdrills;
+sttotal = stealing + stdrdrills;
+bltotal = blocking + stdrdrills;
+sctotal = scoring + scdrills;
+retotal = rebounding + redrills;
+shtotal2 = shtotal - injury;
+drtotal2 = drtotal - injury;
+sttotal2 = sttotal - injury;
+bltotal2 = bltotal - injury;
+
+/*INTRO (INTRO CHOICES GIVEN)*/
+void intro(){
+printf("Welcome to the Basketball Journey!\n\nIn this story, you will be given choices to determine whether you will get drafted to the NBA.\n\n");
+sleep(2);
+printf("Do you want to see a cheat sheet to see all the options and outcomes? (type in yes or no)\n\n");
+scanf("%s", &cheatsheet);
+sleep(2);
+while(cheatsheet != "yes" && cheatsheet != "no"){
+        printf("\nI'm sorry, that is not a choice.\n\n");
+            scanf("%s", &cheatsheet);
+            sleep(2);
+}
+    if(cheatsheet == "yes"){
+        printf("\nGym choice leads to #1 draft guaranteed, Party choice is a 50/50 chance of being in the draft or being dropped out of it completely, nothing choice drops you out the draft no matter what.\n\nSame outcomes for all builds. (type in anything when ready)\n\n");
+        scanf("%s", &cont);
+        sleep(2);
+        printf("\nTo start it off, please type in the name for your character (make sure the first letter of the name is capitalized): ");
+        scanf("%s", &name1);
+        sleep(2);
+        printf("\nEnter another name for a mystery person that will come up during any part of the story depending on your choices (make sure\n\nthe first letter of the name is capitalized): ");
+        scanf("%s", &name2);
+        sleep(2);
+        printf("\nNow for the exciting part, please pick a player build that you would like your character to be.\n\nYou can be a point guard, a lockdown defender, or a center.\n\n");
+        sleep(2);
+        printf("Each player build will have a different story line, so please try every build to see different results.\n\nFor more info about each player build to decide your perfect character, type the initials of the player build then type i\n\nafter. (ex. pgi)\n\n");
+        sleep(2);
+        printf("Each build will have two specific skills and you can go to the gym anytime to increase these skills.\n\nIf you are ready to pick your build, just simply type the full player build name (ex. point guard): ");
+        scanf("%s", &build);
+        sleep(2);
+        while(build != "point guard" && build != "pgi" && build != "lockdown defender" && build != "ldi" && build != "center" && build != "ci"){
+        printf("\nI'm sorry, that is not a choice.\n\n");
+        scanf("%s", &build);
+        sleep(2);
+        }
+    }
+
+
+    if(cheatsheet == "no"){
+        printf("\nTo start it off, please type in the name for your character (make sure the first letter of the name is capitalized): ");
+        scanf("%s", &name1);
+        sleep(2);
+        printf("\nEnter another name for a mystery person that will come up during any part of the story depending on your choices (make sure\n\nthe first letter of the name is capitalized): ");
+        scanf("%s", &name2);
+        sleep(2);
+        printf("\nNow for the exciting part, please pick a player build that you would like your character to be.\n\nYou can be a point guard, a lockdown defender, or a center.\n\n");
+        sleep(2);
+        printf("Each player build will have a different story line, so please try every build to see different results.\n\nFor more info about each player build to decide your perfect character, type the initials of the player build then type i\n\nafter. (ex. pgi)\n\n");
+        sleep(2);
+        printf("Each build will have two specific skills and you can go to the gym anytime to increase these skills.\n\nIf you are ready to pick your build, just simply type the full player build name (ex. point guard): ");
+        scanf("%s", &build);
+        sleep(2);
+        while(build != "point guard" && build != "pgi" && build != "lockdown defender" && build != "ldi" && build != "center" && build != "ci"){
+        printf("\nI'm sorry, that is not a choice.\n\n");
+        scanf("%s", &build);
+        sleep(2);
+        }
+    }
+}
+/*POINT GUARD INFO*/
+void introchoice1a(){
+    printf("\nA point guard is the most specialized role of any position that is expected to run the team's offense by controlling the ball\nand making sure that it gets to the right player at the right time.\nTheir primary job is to facilitate scoring opportunites for their team, or sometimes for themselves.\n");
+    sleep(2);
+    printf("Even though they are the shortest players on the court, they will be mainly good for their scoring (shooting and driving\nlayups) and dribbling.\n\nIf you are ready to pick your build, just simply type the full player build name (ex. point guard): ");
+    scanf("%s", &build);
+    sleep(2);
+    while(build != "point guard" && build != "lockdown defender" && build != "ldi" && build != "center" && build != "ci"){
+        printf("\nI'm sorry, that is not a choice.\n\n");
+            scanf("%s", &build);
+            sleep(2);
+    }
+}
+
+/*LOCKDOWN DEFENDER INFO*/
+void introchoice2a(){
+    printf("\nA lockdown defender is one of the defense's best defenders.\n\nThey are capable of shutting down even the best offensive player on the other team.\n\n");
+    sleep(2);
+    printf("They have quick hands and long arms that are able to block passing lanes, get steals, and keep up with quick offensive players with their crazy athleticism. Their primary skills are steals and blocking.\n\n");
+    sleep(2);
+    printf("If you are ready to pick your build, just simply type the full player build name (ex. point guard): ");
+    scanf("%s", &build);
+    sleep(2);
+    while(build != "point guard" && build != "pgi" && build != "lockdown defender" && build != "center" && build != "ci"){
+        printf("\nI'm sorry, that is not a choice.\n\n");
+            scanf("%s", &build);
+            sleep(2);
+    }
+}
+
+/*CENTER INFO*/
+void introchoice3a(){
+    printf("\nA center is normally the tallest player on the team, and often has a great deal of strength and body mass as well.\n\nThey are valued for their ability to protect their own goal from close shots on defense, while scoring and rebounding with\n\nhigh efficiency on offense.\n\nTheirs skills are scoring (post hooks, dunking, close shots) and rebounding (both offense and defense)\n\n");
+    sleep(2);
+    printf("If you are ready to pick your build, just simply type the full player build name (ex. point guard): ");
+    scanf("%s", &build);
+    sleep(2);
+    while(build != "point guard" && build != "pgi" && build != "lockdown defender" && build != "ldi" && build != "center"){
+        printf("\nI'm sorry, that is not a choice.\n\n");
+            scanf("%s", &build);
+            sleep(2);
+    }
+}
+
+/*POINT GUARD CHOICE (MIDDLE 1)(MIDDLE CHOICES GIVEN)*/
+void introchoice1b(){
+    printf("\nWell done %s!\n\nNow you are ready to start the story!\n\nYou will have the biggest game of your life with many NBA scouts looking for players to draft.\n\nThese choices are very important, so please pick wisely.\n\n", name1);
+    sleep(2);
+    printf("What will you do before the game? (type the letter behind the parenthesis to pick your choice)\n\na) Go to the gym to improve your skills and get good sleep every night\nb) Throw a party to celebrate that you are competing to win the championship\nc) Do nothing until the team practice the day before the big game\n\n");
+    scanf("%s", &middle1choice);
+    sleep(2);
+    while(middle1choice != "a" && middle1choice != "b" && middle1choice != "c" && middle1choice != "d"){
+         printf("\nI'm sorry, that is not a choice.\n\n");
+            scanf("%s", &middle1choice);
+            sleep(2);
+    }
+}
+
+/*POINT GUARD GYM CHOICE (END 1)*/
+void end1a(){
+    printf("\nYou arrive at the gym and start doing shooting drills for 2 hours and gained %.lf shooting. Your shooting stat of %.lf has now\n\nincreased by %.lf.\nTotal: %.lf\n\n", shdrills, shooting, shin, shtotal);
+    sleep(2);
+    printf("You also start doing dribbling drills for 1 hour and gained %.lf shooting. Your dribbling stat of %.lf has now increased by %.lf.\nTotal: %.lf\n\n", drdrills, dribbling, drin, drtotal);
+    sleep(2);
+    printf("As you finish practicing and is preparing to go home, a famous person named %s enters the gym and challenges you to a 1v1.", name2);
+
+    
+    if(end1asit == 1){
+        printf("\n\nYou receive the ball first.\n\nAs you drive in for a layup, you score it but you landed wrong and your foot received a lot of pain.\n\n");
+        sleep(2);
+        printf("You try to walk it off but it didn't seem like it was a small injury.\n\nIn pain, you try to seek care from the medical staff to see if you are able to play in the big game and the result is...\n\n");
+        if(end1bsit == 1){
+            sleep(5);
+            printf("You are able to play!\n\nThe medical staff says that it's just a minor sprain and you are good to go in a few days.\n\n");
+            sleep(5);
+            printf("Fast forward to the results of the game...you played so good that you were going to be guaranteed the #1 pick of the draft.\n\nThis game was historical, as you beaten the scoring record of 46 pts and carried your team to their very first championship.\n\n");
+            sleep(5);
+            printf("Also, your jersey was being hanged up in the stadium for your amazing performance.\n\nYour future career in the NBA is going to be very bright, potentially being in the NBA Hall of Fame.");
+        }
+        if(end1bsit == 2){
+            sleep(5);
+            printf("There is both good and bad news.\n\nThe bad news is that you injured your foot pretty badly.\n\n");
+            sleep(2);
+            printf("However you are able to play the big game but this injury will affect the way you play.\n\nUnfortunately, you lose -2 from your stats.\n\nShooting Total: %.lf\n\nDribbling Total: %.lf", shtotal2, drtotal2);
+            printf("Fast forward to the results of the game...you played so good that you were going to be guaranteed the #1 pick of the draft.\n\nThis game was historical, as you beaten the scoring record of 46 pts and carried your team to their very first championship.\n\n");
+            sleep(5);
+            printf("Also, your jersey was being hanged up in the stadium for your amazing performance.\n\nYour future career in the NBA is going to be very bright, potentially being in the NBA Hall of Fame.");
+        }
+    }
+    else{
+        printf("\n\nYou showed no mercy on him and beat him 12-0.\n\nAfter practicing for 3 hours, you were pretty warmed up unlike %s and it felt like you could not miss.\n\nGreat job!");
+        sleep(5);
+        printf("Fast forward to the results of the game...you played so good that you were going to be guaranteed the #1 pick of the draft.\n\nThis game was historical, as you beaten the scoring record of 46 pts and carried your team to their very first championship.\n\n");
+        sleep(5);
+        printf("Also, your jersey was being hanged up in the stadium for your amazing performance.\n\nYour future career in the NBA is going to be very bright, potentially being in the NBA Hall of Fame.");
+    }
+}
+
+/*POINT GUARD PARTY CHOICE (END 2)*/
+void end1b(){
+    printf("\nYou throw a party at your apartment and invite all your teammates to it.\n\nEveryone had a great time, until the coaching staff noticed that you were busy partying instead of practicing for the big game\n\n.");
+    sleep(2);
+    printf("This results in you being benched and lowering your chances in the NBA draft.\n\nFast forward to the final moments of the game, it is 99-100 with 15.9 secs.\n\n");
+    sleep(2);
+    printf("But then all of a sudden, one of the players got injured and the coach has no choice but to put you in the game.\n\nWith your team having the last possession, you bring up the ball with the whole crowd on their feet.\n\n");
+    sleep(2);
+    printf("Telling your team that you are taking the last shot, you start isoing and shot it right on time with 1 second remaining...\n\n");
+    sleep(2);
+    
+    if(end1csit == 1){
+        printf("It bounces around the rim and...\n\n");
+        sleep(2);
+        printf("sadly rolls out. The whole team and crowd was disappointed with you having the mindset of partying instead of practicing.\n\nSince the scouts knew the situation, they gave up on you and searched for other players\n\nInstead of having the dream to play in the NBA, it is now gone and you live your whole life with regret just because of a\n\nchoice you made.\n\n");
+    }
+    else{
+        printf("It bounces around the rim and...\n\n");
+        sleep(2);
+        printf("drops right through!\n\nWith everyone in shock of what just happened, they ran onto the court and celebrated.\n\n");
+        sleep(2);
+        printf("Even though you made a bad decision before the game, it didn't matter because you have just won the first championship for\n\n your team.\n\nThis game winner also gave you way more recognition to the scouts and potentially being the #1 pick of the draft.\n\n");
+    }
+}
+
+/*POINT GUARD DO NOTHING CHOICE (END 3)*/
+void end1c(){
+    printf("\nYou do nothing until the team practice before the game.\n\nFast forward to the team practice, you realize that you aren't doing as well.\n\n");
+    sleep(2);
+    printf("Hoping that you would play better during the game, you enter the game the next day with confidence.\n\nAnd...");
+    sleep(5);
+    printf("you guys lost the game 36-75.\n\nEveryone was surprised how you performed after your amazing game that led you to this championship.\n\n");
+    sleep(2);
+    printf("When this game mattered the most to determine whether you are a clutch player, it did not show at all with you having a stat line of 2 points and 3 assists (points only from free throws).\n\n");
+    sleep(2);
+    printf("After this horrible performance, you were dropped from the draft and the scouts searched for other players\n\nWith you having a great performance the game before the championship that led you guys to this game, it didn't matter as this game was the most important one.\n\n");
+    sleep(2);
+    printf("After winning that game, it just appeared that you just gave up and thought you were going to go to the draft no matter what the outcome was in your last game.\n\nInstead of having the dream to play in the NBA, it is now gone and you live your whole life with regret just because of a\n\nchoice you made.\n\n");
+}
+
+/*LOCKDOWN DEFENDER CHOICE (MIDDLE 2)(MIDDLE CHOICES GIVEN)*/
+void introchoice2b(){
+    printf("\nWell done %s!\n\nNow you are ready to start the story!\n\nYou will have the biggest game of your life with many NBA scouts looking for players to draft.\n\nThese choices are very important, so please pick wisely.\n\n", name1);
+    sleep(2);
+    printf("What will you do before the game? (type the letter behind the parenthesis to pick your choice)\n\na) Go to the gym to improve your skills and get good sleep every night\nb) Throw a party to celebrate that you are competing to win the championship\nc) Do nothing until the team practice the day before the big game\n\n");
+    scanf("%s", &middle2choice);
+    sleep(2);
+    while(middle2choice != "a" && middle2choice != "b" && middle2choice != "c"){
+         printf("\nI'm sorry, that is not a choice.\n\n");
+            scanf("%s", &middle2choice);
+            sleep(2);
+    }
+}
+
+/*LOCKDOWN DEFENDER GYM CHOICE (END 4)*/
+void end2a(){
+    printf("\nYou arrive at the gym and start doing defending drills for 2 hours and gained %.lf stealing and blocking. Your stealing stat of %.lf has now increased by %.lf.\nTotal: %.lf\n\n", stdrdrills, stealing, stdrin, sttotal,);
+    sleep(2);
+    printf("Your blocking stat of %.lf has now increased by %.lf.\nTotal: %.lf\n\nAs you finish practicing and is preparing to go home, a famous person named %s enters the gym and challenges you to a 1v1.", blocking, stdrin2, bltotal, name2);
+    sleep(2);
+    
+    if(end2asit == 1){
+        printf("\n\nYou receive the ball first.\n\nAs you drive in for a layup, you miss it but since you are more of a defender, you are able to get the ball back with a chasedown block.\n\n");
+        sleep(2);
+        printf("Feeling yourself, you shoot a three but quickly go for the rebound after missing the rim by a lot.\n\nAs you fight for the rebound, you jumped too high and couldn't control your fall.\n\n");
+        sleep(2);
+        printf("You land directly on their foot but luckily they held onto you to protect your fall.\n\nYou try to walk it off but it didn't seem like it was a small injury.\n\n");
+        sleep(2);
+        printf("In pain, you try to seek care from the medical staff to see if you are able to play in the big game and the result is...\n\n");
+    }
+        if(end2bsit == 1){
+            sleep(5);
+            printf("You are able to play!\n\nThe medical staff says that it's just a minor sprain and you are good to go in a few days.\n\n");
+            printf("Fast forward to the results of the game...you played so good that you were going to be guaranteed the #1 pick of the draft.\n\nThis game was historical, as you beaten the scoring record of 46 pts and carried your team to their very first championship.\n\n");
+            sleep(5);
+            printf("Also, your jersey was being hanged up in the stadium for your amazing performance.\n\nYour future career in the NBA is going to be very bright, potentially being in the NBA Hall of Fame.");
+        }
+        if(end2bsit == 2){
+            sleep(5);
+            printf("There is both good and bad news.\n\nThe bad news is that you injured your foot pretty badly.\n\nHowever you are able to play the big game but this injury will affect the way you play.\n\nUnfortunately, you lose -2 from your stats.\n\nStealing Total: %.lf\n\nBlocking Total: %.lf", sttotal2, bltotal2);
+            sleep(5);
+            printf("Fast forward to the results of the game...you played so good that you were going to be guaranteed the #1 pick of the draft.\n\nThis game was historical, as you beaten the scoring record of 46 pts and carried your team to their very first championship.\n\n");
+            sleep(5);
+            printf("Also, your jersey was being hanged up in the stadium for your amazing performance.\n\nYour future career in the NBA is going to be very bright, potentially being in the NBA Hall of Fame.");
+        }
+    else{
+        printf("\n\nYou showed no mercy on him and beat him 12-10.\n\nEven though a lot of bad shot attempts were made because you are more of a defensive player, you were able to make it up on\n\ndefense.\n\nLike they all say, defense wins games.");
+        printf("Fast forward to the results of the game...you played so good that you were going to be guaranteed the #1 pick of the draft.\n\nThis game was historical, as you beaten the scoring record of 46 pts and carried your team to their very first championship.\n\n");
+            sleep(5);
+            printf("Also, your jersey was being hanged up in the stadium for your amazing performance.\n\nYour future career in the NBA is going to be very bright, potentially being in the NBA Hall of Fame.");
+    }
+}
+
+
+/*LOCKDOWN DEFENDER PARTY CHOICE (END 5)*/
+void end2b(){
+    printf("\nYou throw a party at your apartment and invite all your teammates to it.\n\nEveryone had a great time, until the coaching staff noticed that you were busy partying instead of practicing for the big game\n\n.");
+    sleep(2);
+    printf("This results in you being benched and lowering your chances in the NBA draft.\n\nFast forward to the final moments of the game, it is 99-100 with 15.9 secs.\n\n");
+    sleep(2);
+    printf("But then all of a sudden, one of the players got injured and the coach has no choice but to put you in the game.\n\nWith the other team having the last possession, you are forced to guard the person with the ball.\n\n");
+    sleep(2);
+    printf("They try to hit you with many dribble combos, but you were able to keep up.\n\nThen suddenly, he steps back and shoots it right on time.\n\nYou were able to get a good contest and...");
+    sleep(2);
+    
+    if(end2csit == 1){
+        printf("It bounces around the rim and...\n\n");
+        sleep(2);
+        printf("sadly rolls right in. The whole team and crowd was disappointed with you having the mindset of partying instead of practicing.\n\nSince the scouts knew the situation, they gave up on you and searched for other players\n\nInstead of having the dream to play in the NBA, it is now gone and you live your whole life with regret just because of a\n\n choice you made.\n\n");
+    }
+    else{
+        printf("It bounces around the rim and...\n\n");
+        sleep(2);
+        printf("rolls out!\n\nWith everyone in shock of what just happened, they ran onto the court and celebrated.\n\n");
+        sleep(2);
+        printf("Even though you made a bad decision before the game, it didn't matter because you have just won the first championship for\n\n your team.\n\nThis game winner also gave you way more recognition to the scouts and potentially being the #1 pick of the draft.\n\n");
+    }
+}
+
+/*LOCKDOWN DEFENDER DO NOTHING CHOICE (END 6)*/
+void end2c(){
+    printf("\nYou do nothing until the team practice before the game.\n\nFast forward to the team practice, you realize that you aren't doing as well.\n\n");
+    sleep(2);
+    printf("Hoping that you would play better during the game, you enter the game the next day with confidence.\n\nAnd...");
+    sleep(5);
+    printf("you guys lost the game 36-75.\n\nEveryone was surprised how you performed after your amazing game that led you to this championship.\n\n");
+    sleep(2);
+    printf("When this game mattered the most to determine whether you are a clutch player, it did not show at all with you having a stat line of 2 points and 3 assists (points only from free throws).\n\n");
+    sleep(2);
+    printf("After this horrible performance, you were dropped from the draft and the scouts searched for other players\n\nWith you having a great performance the game before the championship that led you guys to this game, it didn't matter as this game was the most important one.\n\n");
+    sleep(2);
+    printf("After winning that game, it just appeared that you just gave up and thought you were going to go to the draft no matter what the outcome was in your last game.\n\nInstead of having the dream to play in the NBA, it is now gone and you live your whole life with regret just because of a\n\nchoice you made.\n\n");
+}
+
+/*CENTER CHOICE (MIDDLE 3)(MIDDLE CHOICES GIVEN)*/
+void introchoice3b(){
+    printf("\nWell done %s!\n\nNow you are ready to start the story!\n\nYou will have the biggest game of your life with many NBA scouts looking for players to draft.\n\nThese choices are very important, so please pick wisely.\n\n", name1);
+    sleep(2);
+    printf("What will you do before the game? (type the letter behind the parenthesis to pick your choice)\n\na) Go to the gym to improve your skills and get good sleep every night\nb) Throw a party to celebrate that you are competing to win the championship\nc) Do nothing until the team practice the day before the big game\n\n");
+    scanf("%s", &middle3choice);
+    sleep(2);
+    while(middle3choice != "a" && middle3choice != "b" && middle3choice != "c"){
+         printf("\nI'm sorry, that is not a choice.\n\n");
+            scanf("%s", &middle3choice);
+            sleep(2);
+    }
+}
+
+/*CENTER GYM CHOICE (END 7)*/
+void end3a(){
+    printf("\nYou arrive at the gym and start doing scoring drills for 2 hours and gained %.lf scoring (includes close shots, post hooks,\n\ndunking). Your scoring stat of %.lf has now increased by %.lf.\nTotal: %.lf\n\nYou also start doing rebounding drills for 1 hour and gained %.lf rebounding. Your rebounding stat of %.lf has now increased by %.lf.\nTotal: %.lf\n\nAs you finish practicing and is preparing to go home, a famous person named %s enters the gym and challenges you to a 1v1.", scdrills, scoring, scin, sctotal, redrills, rebounding, rein, retotal, name2);
+
+    
+    if(end3asit == 1){
+        printf("\n\nYou receive the ball first.\n\nAs you post up your opponent, you score on him with ease.\n\n");
+        sleep(2);
+        printf("You were able to do the same move 3 times and was successful each time.\n\nBut the very next play, they was able to steal the ball from you and tried to go for a layup.\n\n");
+         sleep(2);
+        printf("With you not having the best speed, they knew to take advantage of it.\n\nHowever, you tried your very best to try to block it because you did not want to get scored on.");
+         sleep(2);
+        printf("As you jumped, you feel a sharp pain in your leg and gave up on the block.\n\nYou try to walk it off but it didn't seem like it was a small injury.\n\n");
+        sleep(2);
+        printf("In pain, you try to seek care from the medical staff to see if you are able to play in the big game and the result is...\n\n");
+    }
+        if(end3bsit == 1){
+            sleep(5);
+            printf("You are able to play!\n\nThe medical staff says that it's just a minor sprain and you are good to go in a few days.\n\n");
+            printf("Fast forward to the results of the game...you played so good that you were going to be guaranteed the #1 pick of the draft.\n\nThis game was historical, as you beaten the scoring record of 46 pts and carried your team to their very first championship.\n\n");
+            sleep(5);
+            printf("Also, your jersey was being hanged up in the stadium for your amazing performance.\n\nYour future career in the NBA is going to be very bright, potentially being in the NBA Hall of Fame.");
+        }
+        if(end3bsit == 2){
+            sleep(5);
+            printf("There is both good and bad news.\n\nThe bad news is that you injured your foot pretty badly.\n\nHowever you are able to play the big game but this injury will affect the way you play.\n\nUnfortunately, you lose -2 from your stats.\n\nShooting Total: %.lf\n\nDribbling Total: %.lf\n\n", shtotal2, drtotal2);
+            sleep(5);
+            printf("Fast forward to the results of the game...you played so good that you were going to be guaranteed the #1 pick of the draft.\n\nThis game was historical, as you beaten the scoring record of 46 pts and carried your team to their very first championship.\n\n");
+            sleep(5);
+            printf("Also, your jersey was being hanged up in the stadium for your amazing performance.\n\nYour future career in the NBA is going to be very bright, potentially being in the NBA Hall of Fame.");
+        }
+    else{
+        printf("\n\nYou showed no mercy on him and beat him 12-0.\n\nEven though you were great on offense, you struggled with defense because of your speed and their quickness.\n\n");
+        sleep(2);
+        printf("Luckily, they didn't hit their shots and you were able to punish him with your strength.\n\nGreat job!");
+        printf("Fast forward to the results of the game...you played so good that you were going to be guaranteed the #1 pick of the draft.\n\nThis game was historical, as you beaten the scoring record of 46 pts and carried your team to their very first championship.\n\n");
+            sleep(5);
+            printf("Also, your jersey was being hanged up in the stadium for your amazing performance.\n\nYour future career in the NBA is going to be very bright, potentially being in the NBA Hall of Fame.");
+    }
+}
+
+/*CENTER PARTY CHOICE (END 8)*/
+void end3b(){
+    printf("\nYou throw a party at your apartment and invite all your teammates to it.\n\nEveryone had a great time, until the coaching staff noticed that you were busy partying instead of practicing for the big game.\n\n");
+    sleep(5);
+    printf("This results in you being benched and lowering your chances in the NBA draft.\n\nFast forward to the final moments of the game, it is 101-100 with 15.9 secs.\n\n");
+    sleep(5);
+    printf("But then all of a sudden, one of the players got injured and the coach has no choice but to put you in the game.\n\nWith your team having the last possession, you wait for your teammate to come up the court so you can set up a play with a screen.\n\n");
+    sleep(5);
+    printf("Not realizing the game situation, the refs blow their whistles and apparently, your coach calls a timeout.\n\nThis is good because you and your team would be able to set up a play and would be on the same page.");
+    sleep(5);
+    printf("The coach wants everyone to be spread out but for you specifically, they want you to stand in the paint.\n\nThen he wants you to pretend to go up to the point guard's defender and set a screen.\n\n");
+    sleep(5);
+    printf("This allows your defender to come up, thinking that they would have to guard up to the point guard.\n\nBut instead, you would quickly run straight to the hoop and hope that it is open.\n\n");
+    sleep(5);
+    printf("If it is open, you would be given the ball for a free layup.\n\nBut if it doesn't work, the team just have to rely on the point guard to create a shot in the last seconds.");
+    sleep(5);
+    printf("You guys come back to the court and started to do the play that was set up.\n\nYou inbound the ball to the point guard and began to go to your spot.\n\n");
+    sleep(5);
+    printf("When the point guard gave you a signal, you came up to give a 'screen' then quickly ran to the hoop.\n\nYour defender did pick up on the point guard and was unaware of you cutting to the basket...\n\n");
+    if(end3csit == 1){
+        printf("The point guard sees that you are wide open and gives you a lob.\n\nSprinting as fast as you could, you were able to make it and make the dunk!\n\n");
+        sleep(5);
+         printf("With everyone in shock of what just happened, they ran onto the court and celebrated.\n\n");
+        sleep(5);
+        printf("Even though you made a bad decision before the game, it didn't matter because you have just won the first championship for\n\n your team.\n\nThis game winner also gave you way more recognition to the scouts and potentially being the #1 pick of the draft.\n\n");
+    }
+    else{
+        printf("However, the point guard doesn't realize this and shoots a bad shot!\n\nYou try to go for the rebound but the other team beat you to it.\n\n");
+        sleep(5);
+       printf("The game was over. With the coach having a good plan for the team, it wasn't to be executed.\n\n");
+        sleep(5);
+        printf("Even though it wasn't your fault, you were still penalized of not being in the NBA draft because of your decision.\n\n");
+        sleep(5);
+        printf("Since the scouts knew the situation, they gave up on you and searched for other players.\n\nInstead of having the dream to play in the NBA, it is now gone and you live your whole life with regret just because of a\n\n choice you made.\n\n");
+    }
+}
+
+/*CENTER DO NOTHING CHOICE (END 9)*/
+void end3c(){
+    printf("\nYou do nothing until the team practice before the game.\n\nFast forward to the team practice, you realize that you aren't doing as well.\n\n");
+    sleep(2);
+    printf("Hoping that you would play better during the game, you enter the game the next day with confidence.\n\nAnd...");
+    sleep(5);
+    printf("you guys lost the game 36-75.\n\nEveryone was surprised how you performed after your amazing game that led you to this championship.\n\n");
+    sleep(2);
+    printf("When this game mattered the most to determine whether you are a clutch player, it did not show at all with you having a stat line of 2 points and 3 assists (points only from free throws).\n\n");
+    sleep(2);
+    printf("After this horrible performance, you were dropped from the draft and the scouts searched for other players\n\nWith you having a great performance the game before the championship that led you guys to this game, it didn't matter as this game was the most important one.\n\n");
+    sleep(2);
+    printf("After winning that game, it just appeared that you just gave up and thought you were going to go to the draft no matter what the outcome was in your last game.\n\nInstead of having the dream to play in the NBA, it is now gone and you live your whole life with regret just because of a\n\nchoice you made.\n\n");
+}
+
+
+int main(){
+    intro();
+    if(build == "pgi"){
+        introchoice1a();
+    }
+    if(build =="ldi"){
+        introchoice2a();
+    }
+    if(build =="ci"){
+        introchoice3a();
+    }
+    if(build == "point guard"){
+        introchoice1b();
+        if(middle1choice == "a"){
+            end1a();
+        }
+    
+        if(middle1choice == "b"){
+            end1b();
+        }
+        if(middle1choice == "c"){
+            end1c();
+        }
+    }
+    if(build == "lockdown defender"){
+        introchoice2b();
+        if(middle2choice == "a"){
+            end2a();
+        }
+        
+        if(middle2choice == "b"){
+            end2b();
+        }
+        if(middle2choice == "c"){
+            end3c();
+        }
+    }
+     if(build == "center"){
+        introchoice3b();
+        if(middle3choice == "a"){
+            end3a();
+        }
+        
+        if(middle3choice == "b"){
+            end3b();
+        }
+        if(middle3choice == "c"){
+            end3c();
+        }
+    }
+}
+
